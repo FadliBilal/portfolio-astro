@@ -1,0 +1,42 @@
+---
+interface Project {
+  title: string;
+  description: string;
+  status: string;
+}
+
+const projects: Project[] = [
+  {
+    title: "Secret Project #1",
+    description: "An innovative solution is on its way! Stay tuned for updates.",
+    status: "Coming Soon",
+  },
+  {
+    title: "Secret Project #2",
+    description: "Something exciting is in the works. More details will be revealed soon!",
+    status: "Coming Soon",
+  },
+];
+---
+
+<section
+  id="projects"
+  class="py-16 border-t border-[#ffffff10] text-[var(--white)] bg-[#0b0b0b]"
+>
+  <div class="max-w-4xl mx-auto text-center">
+    <h2 class="text-xl text-[var(--sec)] mb-4 font-semibold uppercase tracking-widest">Stay Tuned!<?h2>
+    <h3 class="text-5xl md:text-6xl font-bold mb-12 leading-tight">Exciting Projects will be appear soon!</h3>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      {projects.map((project) => (
+        <div class="group relative overflow-hidden rounded-3xl shadow-lg border border-[#ffffff30] bg-[#1a1a1a] p-6 transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+          <div class="relative z-10 text-center">
+            <h4 class="text-2xl font-semibold text-white mb-2 group-hover:blur-none blur-md transition-all duration-300">{project.title}</h4>
+            <p class="text-gray-400 text-base mb-4 opacity-70 group-hover:opacity-100 transition-opacity duration-300">{project.description}</p>
+            <span class="py-2 px-4 text-sm text-black bg-[#ffcc00] rounded-full uppercase font-semibold tracking-wide">{project.status}</span>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
